@@ -72,8 +72,8 @@ class AddToCartPage:
         time.sleep(2)
 
 
-    # def show_item_details(self):
-    #     sub_total = self.driver.find_element(By.XPATH,"")
+    def show_item_details(self):
+        sub_total = self.driver.find_element(By.XPATH,"//div[@class = 'cart__summary']//span")
 
 
 
