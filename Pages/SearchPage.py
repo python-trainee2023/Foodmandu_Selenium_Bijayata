@@ -13,25 +13,22 @@ class SearchPage:
 
     def searchRestaurant(self , restName):
 
-        searchTextInput= self.driver.find_element(By.XPATH, '//*[@placeholder="Restaurant or Cuisine (leave it blank to browse all)"]')
-        searchTextInput.send_keys(restName)
+        search_text_input= self.driver.find_element(By.XPATH, '//*[@placeholder="Restaurant or Cuisine (leave it blank to browse all)"]')
+        search_text_input.send_keys(restName)
 
-        time.sleep(5)
-        findRestButton = self.driver.find_element(By.XPATH, "//button[@class='btn btn--primary btn-lg btn-block']")
-        # WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(findRestButton)).click()
+        time.sleep(2)
+        find_rest_button = self.driver.find_element(By.XPATH, "//button[@class='btn btn--primary btn-lg btn-block']")
 
-        # findRestButton = self.driver.find_element(By.XPATH, '//button[contains(text(),"Find Restaurants")]')
-        #
-        findRestButton.click()
+        find_rest_button.click()
 
-        time.sleep(5)
+        time.sleep(2)
 
 
 
-        clickRestaurant = self.driver.find_element(By.XPATH, "//div[@class='col-md-4 col-lg-4 spinner ng-scope']")
-        clickRestaurant.click()
+        click_restaurant = self.driver.find_element(By.XPATH, "//div[@class='col-md-4 col-lg-4 spinner ng-scope']")
+        click_restaurant.click()
 
-        time.sleep(5)
+        time.sleep(2)
 
 
 

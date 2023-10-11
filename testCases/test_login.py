@@ -3,7 +3,7 @@ from pydoc import classname
 
 from selenium.webdriver.common.by import By
 
-from Pages.loginPage import loginPage
+from Pages.LoginPage import loginPage
 
 from testCases.baseTest import baseTest
 
