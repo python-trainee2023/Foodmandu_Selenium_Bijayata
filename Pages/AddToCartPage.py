@@ -39,11 +39,6 @@ class AddToCartPage:
         proceed_button.click()
 
 
-
-
-
-
-
     def item_add_modal(self, notes):
 
         note_input = self.driver.find_element(By.XPATH, "//textarea[@placeholder='Add Notes']")
@@ -73,7 +68,8 @@ class AddToCartPage:
 
 
     def show_item_details(self):
-        sub_total = self.driver.find_element(By.XPATH,"//div[@class = 'cart__summary']//span")
+        sub_total = self.driver.find_element(By.XPATH,"//div[@class ='mb-0 ng-binding ng-hide']//span")
+        sub_total.text
 
 
 
