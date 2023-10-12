@@ -5,8 +5,6 @@ from selenium.webdriver.common.by import By
 
 class AddToCartPage:
 
-
-
     def __init__(self, driver):
         self.driver = driver
 
@@ -32,62 +30,48 @@ class AddToCartPage:
 
         self.item_add_modal("Third item added")
 
+        click_item3 = self.driver.find_element(By.XPATH, "//span[contains(text(), 'Buffalo Wings')]")
+        click_item3.click()
+
+        time.sleep(1)
+
+        self.remove_item()
+
         time.sleep(2)
 
-        proceed_button = self.driver.find_element(By.XPATH, "//button[text()='Proceed to Checkout']")
-
-        proceed_button.click()
-
+        # proceed_button = self.driver.find_element(By.XPATH, "//button[text()='Proceed to Checkout']")
+        #
+        # proceed_button.click()
 
     def item_add_modal(self, notes):
-
         note_input = self.driver.find_element(By.XPATH, "//textarea[@placeholder='Add Notes']")
         note_input.clear()
         note_input.send_keys(notes)
 
-        increase_item = self.driver.find_element(By.XPATH,"//span[@class = 'icomoon icon-add icomoon--green']")
+        increase_item = self.driver.find_element(By.XPATH, "//span[@class = 'icomoon icon-add icomoon--green']")
         increase_item.click()
         increase_item.click()
 
-        time.sleep(2)
+        time.sleep(1)
         decrease_item = self.driver.find_element(By.XPATH, "//span[@class= 'icomoon icon-remove icomoon--green']")
         decrease_item.click()
-        time.sleep(2)
+        time.sleep(1)
 
         # item_note = (By.XPATH,"//textarea[@placeholder='Add Notes']")
 
-
-        time.sleep(2)
+        time.sleep(1)
 
         # update_bag = (By.CLASS_NAME, "btn btn--primary btn-block btn--add-to-cart")
-        add_to_bag = self.driver.find_element(By.XPATH,"//button[@class='btn btn--primary btn-block btn--add-to-cart']")
+        add_to_bag = self.driver.find_element(By.XPATH,
+                                              "//button[@class='btn btn--primary btn-block btn--add-to-cart']")
 
         add_to_bag.click()
 
-        time.sleep(2)
+        time.sleep(1)
 
 
-    def show_item_details(self):
-        sub_total = self.driver.find_element(By.XPATH,"//div[@class ='mb-0 ng-binding ng-hide']//span")
-        sub_total.text
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def remove_item(self):
+        remove_item3 = self.driver.find_element(By.XPATH, "//button[@class='btn btn-secondary btn-block btn-secondary--remove-item']")
+        remove_item3.click()
 
 
